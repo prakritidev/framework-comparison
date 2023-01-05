@@ -2,6 +2,7 @@ package com.prakritidev.verma.javasever;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,11 @@ public class JavaseverApplication {
 
 @RestController
 @RequestMapping
-class Controller{
+class Controller { 
+	
+	@GetMapping(path = "/")
+	public String helloWorld() {
+		return "Hello World!";
+	}
 
 }
