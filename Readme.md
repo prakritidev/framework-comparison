@@ -9,9 +9,9 @@ Just wanted to check if nodejs is really better than Java when dealing with I/O 
 1. I/O Tasks: tasks that call external things (database, external api, disk read, etc.)
 2. CPU Intensive: tasks that need computation and can't be delegated to disk, network card, or other hardware. (encryption, data manipulation[sorting, finding combinations(realtime correlation between two or multiple stock etc)])
 
-# Phase 1 Test results concurrency of 1000 and total request 1000000
+# Phase 1 
 
-I'm not impressed, let's try doing some encryption in second phase.  
+Test results concurrency of 1000 and total request 1000000, I'm not impressed, let's try doing some encryption in second phase.  
 
 ## NODEJS 
 <code>
@@ -72,7 +72,7 @@ Percentage of the requests served within a certain time (ms)
 </code>
 
 ## Java 
-
+<code>
 ❯ ab -n 1000000 -c 1000 "http://localhost:8080/"
 This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -127,14 +127,14 @@ Percentage of the requests served within a certain time (ms)
   98%     31
   99%     32
  100%     42 (longest request)
-
+</code>
 
 ## Phase 2 (Hashing Implementation)
 
 I was not expecting this result. will do some some more testing on this phase. 
 
 ### Java
-
+<code>
 ❯ ab -n 1000000 -c 1000 "http://localhost:8080/?input=duck"
 This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -189,10 +189,10 @@ Percentage of the requests served within a certain time (ms)
   98%     43
   99%     45
  100%     62 (longest request)
-
+</code>
 
 ### Nodejs
-
+<code>
  ab -n 1000000 -c 1000 "http://localhost:3000/?input=duck"
 This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -247,3 +247,4 @@ Percentage of the requests served within a certain time (ms)
   98%    194
   99%    209
  100%    238 (longest request)
+</code>
