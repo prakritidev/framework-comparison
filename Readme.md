@@ -14,6 +14,7 @@ Just wanted to check if nodejs is really better than Java when dealing with I/O 
 I'm not impressed, let's try doing some encryption in second phase.  
 
 ## NODEJS 
+<code>
 ❯ ab -n 1000000 -c 1000 "http://localhost:3000/"
 This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -68,7 +69,7 @@ Percentage of the requests served within a certain time (ms)
   98%     72
   99%     77
  100%     92 (longest request)
-
+</code>
 
 ## Java 
 
